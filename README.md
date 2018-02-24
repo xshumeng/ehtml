@@ -9,12 +9,12 @@ mochiweb_html模块。
 支持的选择器有：标签选择器、ID选择器、类选择器
 
 ``` erlang
-	{ok, FileBin} = file:read_file(Page),
+    {ok, FileBin} = file:read_file(Page),
     HNode = html_util:parse(FileBin),
-	%% 定义HTML选择器
+    %% 定义HTML选择器
     Selector = "html body #content .dict_nav_list ul li a",
-	%% 获取指定选择器的节点
+    %% 获取指定选择器的节点
     Ret = html_util:get_by_selector(Selector, HNode),
-	%% 获取节点的属性
-	html_util:get_attrs_value("href", Ret)
+    %% 获取节点的属性
+    html_util:get_attrs_value("href", Ret)
 ```
